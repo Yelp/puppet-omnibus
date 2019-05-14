@@ -10,7 +10,7 @@ fi
 
 if [ "$PUPPET_VERSION" == "" ];then
   echo "PUPPET_VERSION environment variable must be set"
-  exit1
+  exit 1
 fi
 echo "Going for bundle install and build:"
 
