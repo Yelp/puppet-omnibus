@@ -14,9 +14,6 @@ class Nginx < FPM::Cookery::Recipe
 
   rel = `cat /etc/lsb-release | grep DISTRIB_CODENAME | cut -d= -f2`.chomp
   case rel
-  when 'lucid'
-    build_depends 'libssl-dev'
-    depends 'libssl0.9.8'
   when 'trusty', 'xenial'
     build_depends 'libssl-dev'
     depends 'libssl1.0.0'
