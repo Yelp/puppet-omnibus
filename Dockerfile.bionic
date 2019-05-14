@@ -27,9 +27,10 @@ RUN mkdir -p /opt/puppet-omnibus/embedded && \
     export RUBY_CFLAGS=-Os && \
     export RUBY_BUILD_CACHE_PATH=/tmp && \
     export RUBY_CONFIGURE_OPTS="--without-gdbm --without-dbm \
-	--with-readline-dir=/usr/lib/x86_64-linux-gnu --with-openssl-dir=/usr/lib/x86_64-linux-gnu \
-	--disable-install-doc --without-tcl --without-tk" && \
+    --with-readline-dir=/usr/lib/x86_64-linux-gnu --with-openssl-dir=/usr/lib/x86_64-linux-gnu \
+    --disable-install-doc --without-tcl --without-tk" && \
     cat /tmp/ruby-2.1.2-patches/* | /tmp/ruby-build-20140524/bin/ruby-build -p 2.1.2 /opt/puppet-omnibus/embedded
 
-RUN /opt/puppet-omnibus/embedded/bin/gem update --system && \
+RUN /opt/puppet-omnibus/embedded/bin/gem install rubygems-update -v '<3' && \
+    /opt/puppet-omnibus/embedded/bin/update_rubygems && \
     rm -rf /opt/puppet-omnibus/embedded/share/*
