@@ -27,7 +27,12 @@ ADD vendor/ruby-build-20211203.tar.gz /tmp
 #
 # Admittedly, this is a hack, and hopefully the situation here is better later
 # on in jammy's release.
-RUN wget http://mirrors.kernel.org/ubuntu/pool/main/o/openssl/libssl-dev_1.1.1l-1ubuntu1_amd64.deb
+
+
+RUN wget https://mirrors.edge.kernel.org/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1_amd64.deb
+RUN wget https://mirrors.edge.kernel.org/ubuntu/pool/main/o/openssl/libssl-dev_1.1.1l-1ubuntu1_amd64.deb
+
+RUN dpkg -i libssl1.1_1.1.1l-1ubuntu1_amd64.deb
 RUN dpkg -i libssl-dev_1.1.1l-1ubuntu1_amd64.deb
 
 RUN mkdir -p /opt/puppet-omnibus/embedded && \
