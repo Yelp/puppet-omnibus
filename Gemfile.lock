@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/bobtfish/fpm-cookery.git
+  remote: https://github.com/bobtfish/fpm-cookery.git
   revision: dff240106a053c41414443120b44dc18a5df71ba
   branch: master
   specs:
