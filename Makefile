@@ -1,6 +1,6 @@
 PUPPET_GIT    := $(or ${upstream_puppet_git},"https://github.com/Yelp/puppet.git")
 VERSION       := $(or ${puppet_version},"4.5.3")
-ITERATION     := $(or ${puppet_vendor_version},y6)
+ITERATION     := $(or ${puppet_vendor_version},t1)
 PACKAGE_NAME  := "puppet-omnibus"
 PKG_ITERATION := yelp-1
 
