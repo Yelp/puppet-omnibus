@@ -30,8 +30,7 @@ class PuppetOmnibus < FPM::Cookery::Recipe
   omnibus_dir     "/opt/#{name}"
   omnibus_recipes 'libaugeas', 'puppet', 'nginx'
 
-  conflicts(*%w{puppet puppet-common hiera yelp-hiera facter puppetmaster
-                puppetmaster-passenger puppetmaster-common})
+  conflicts(*%w{puppetmaster puppetmaster-passenger puppetmaster-common})
 
   rel = `cat /etc/lsb-release | grep DISTRIB_CODENAME | cut -d= -f2`.chomp
   case rel
