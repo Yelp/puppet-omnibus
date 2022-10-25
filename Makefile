@@ -2,7 +2,7 @@ PUPPET_GIT    := $(or ${upstream_puppet_git},"https://github.com/Yelp/puppet.git
 VERSION       := $(or ${puppet_version},"4.5.3")
 ITERATION     := $(or ${puppet_vendor_version},y7)
 PACKAGE_NAME  := "puppet-omnibus"
-PKG_ITERATION := yelp-2
+PKG_ITERATION := yelp-3
 
 .PHONY: dist docker itest package clean
 
