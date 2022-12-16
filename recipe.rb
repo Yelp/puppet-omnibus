@@ -34,7 +34,7 @@ class PuppetOmnibus < FPM::Cookery::Recipe
 
   rel = `cat /etc/lsb-release | grep DISTRIB_CODENAME | cut -d= -f2`.chomp
   case rel
-  when 'trusty', 'xenial', 'bionic'
+  when 'xenial', 'bionic'
     depends 'libssl1.0.0'
   else
     depends 'libssl1.1'
